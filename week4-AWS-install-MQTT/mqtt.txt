@@ -1,0 +1,15 @@
+sudoamazon-linux-extras install -y epel
+●
+sudoyum install -y mosquitto
+●
+Start mosquittoservice and enable it
+○
+sudosystemctlstart mosquitto
+○
+sudosystemctlenable mosquitto
+●
+Test the installation (two terminals are needed)
+○
+mosquitto_sub-h localhost -t "test” => Do this on terminal 1
+○
+mosquitto_pub-h localhost -t test -m "hello world” => Do this on terminal 2
